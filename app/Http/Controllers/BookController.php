@@ -38,10 +38,14 @@ class BookController extends Controller
           'numPages' => 'required',
        ]);
 
-        $input = $request->all();
-        Book::create($request->all());
+       $book = new Book;
+       $book->name = $request->name;
+       $book->author = $request->author;
+       $book->numPages = $request->numPages;
 
-        return redirect()->route('books.index')->with('success','Book created successfully.');
+       $book->save();
+
+       return redirect()->route('books.index');
     }
 
 
@@ -76,7 +80,9 @@ class BookController extends Controller
             'numPages' => 'required',
          ]);
 
-         $book->update($request->all());
+         $book->update(['name'=>$request->name,
+                        'author'=>$request->author,
+                         'numPages'=>$request->numPages]);
 
          return redirect()->route('books.index')->with('success','Book updated successfully');
 

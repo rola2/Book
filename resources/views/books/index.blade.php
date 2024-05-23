@@ -3,6 +3,7 @@
              <a href="{{ url('/books/create') }}" class="btn btn-success btn-sm" title="Add New Contact">
                <i class="fa fa-plus" aria-hidden="true"></i> Add New Book
              </a>
+
        <br/>
        <br>
         <br/>
@@ -38,8 +39,18 @@
         </tr>
         @endforeach
     </tbody>
- </table>
+</table> <br>
+<div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item" href="{{ route('logout') }}"
+         onclick="event.preventDefault();
+         document.getElementById('logout-form').submit();">
+             {{ __('Logout') }}
+     </a>
 
+     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+         @csrf
+     </form>
+</div>
 </div>
 </div>
 
