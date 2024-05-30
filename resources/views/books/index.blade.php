@@ -1,6 +1,6 @@
 
 <div class="col-md-9">
-             <a href="{{ url('/books/create') }}" class="btn btn-success btn-sm" title="Add New Contact">
+             <a href="{{ route('create') }}" class="btn btn-success btn-sm" title="Add New Contact">
                <i class="fa fa-plus" aria-hidden="true"></i> Add New Book
              </a>
 

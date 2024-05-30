@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Middleware\CheckAdmin;
+use App\Middleware\Auth;
 
 class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+    public function  __construct(){
+
+    }
     public function index()
     {
         //
